@@ -1,0 +1,48 @@
+Este script SQL fornece a implementação de um sistema de gerenciamento de inventário básico para um armazém. O sistema foi projetado para facilitar a administração e o acompanhamento de produtos, categorias e fornecedores dentro de um banco de dados. A estrutura do banco de dados e os comandos SQL fornecidos permitem a criação, atualização, consulta e exclusão de dados relevantes ao gerenciamento de inventário.
+
+# Sistema de Gerenciamento de Inventário
+
+## Descrição
+
+Este projeto consiste na criação de um sistema básico de gerenciamento de inventário para um armazém. O sistema permite o registro e a manutenção de informações sobre produtos, categorias e fornecedores, facilitando a gestão de entradas e saídas de produtos, bem como a consulta e atualização dessas informações.
+
+## Estrutura do Banco de Dados
+
+O banco de dados `InventarioArmazem` contém as seguintes tabelas:
+
+1. **Categorias**
+   - `CategoriaID` (INT, PRIMARY KEY, AUTO_INCREMENT)
+   - `Nome` (VARCHAR(255), NOT NULL)
+
+2. **Fornecedores**
+   - `FornecedorID` (INT, PRIMARY KEY, AUTO_INCREMENT)
+   - `Nome` (VARCHAR(255), NOT NULL)
+   - `Contato` (VARCHAR(255))
+   - `Endereco` (TEXT)
+
+3. **Produtos**
+   - `ProdutoID` (INT, PRIMARY KEY, AUTO_INCREMENT)
+   - `Nome` (VARCHAR(255), NOT NULL)
+   - `Descricao` (TEXT)
+   - `Preco` (DECIMAL(10, 2), NOT NULL)
+   - `QuantidadeEmEstoque` (INT, NOT NULL)
+   - `CategoriaID` (INT, FOREIGN KEY)
+
+4. **ProdutoFornecedor**
+   - `ProdutoID` (INT, FOREIGN KEY)
+   - `FornecedorID` (INT, FOREIGN KEY)
+   - PRIMARY KEY (`ProdutoID`, `FornecedorID`)
+
+## Comandos SQL
+
+### Criar o Banco de Dados e Tabelas
+
+```sql
+-- Passo 1: Criar o Banco de Dados
+CREATE DATABASE InventarioArmazem;
+
+-- Usar o banco de dados recém-criado
+USE InventarioArmazem;
+
+-- Passo 2: Criar as Tabelas
+-- (Inclua aqui o código SQL para criar as tabelas, conforme fornecido acima)
