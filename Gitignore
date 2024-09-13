@@ -1,0 +1,23 @@
+
+### `.gitignore`
+
+O arquivo `.gitignore` é usado para especificar quais arquivos ou diretórios devem ser ignorados pelo Git. Para um projeto que inclui arquivos SQL e não deve incluir arquivos gerados automaticamente ou temporários, o conteúdo pode ser:
+
+```gitignore
+# Ignorar arquivos de sistema
+.DS_Store
+Thumbs.db
+
+# Ignorar arquivos de configuração do IDE
+*.idea/
+*.vscode/
+
+# Ignorar arquivos de banco de dados
+*.sql
+
+# Ignorar arquivos temporários
+*.log
+*.tmp
+*.swp
+
+# Ignorar outros arquivos ou diretórios específicos, se necessário
